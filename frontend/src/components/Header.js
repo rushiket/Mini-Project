@@ -2,20 +2,23 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { Row,Col } from 'react-bootstrap';
+import { LinkContainer } from "react-router-bootstrap";
 function Header() {
   return (
     <header>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/">Indian Company Shares</Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand>Indian Company Shares</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#home"><i class="fa-solid fa-house-user"></i>Home</Nav.Link>
-               
-              
+              <LinkContainer to="/">
+                <Nav.Link>
+                  <i className="fa-solid fa-house-user"></i>Home
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
