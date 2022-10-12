@@ -11,24 +11,25 @@ function HomeScreen() {
 
   useEffect(() => {
     async function fetchData(){
-        const { tempData } = await axios.get('/api/data/')
-        console.log(tempData)
-        setData(tempData)
+       const tempData  = await axios.get('/api/data/')
+       console.log(tempData.data)
+        setData(tempData.data)
     }
     
     fetchData()
     
   }, []);
-
+  
   return (
     <div>
       <Row>
-        {data.map((d) => (
+        {data.map(d => (
           <Col key={d.ID} sm={12} md={6} lg={4} xl={3}>
-            {d.SYMBOL}
+            
             <Share share={d} />
           </Col>
         ))}
+        
       </Row>
     </div>
   );
