@@ -15,11 +15,11 @@ def getData(request):
     return Response(data)
 
 @api_view(['GET'])
-def getID(request,pk):
-    id = None
+def getShare(request,SYMBOL):
+    share = None
     for i in data:
-        if i['ID'] == pk:
-            id = i
+        if i['SYMBOL'] == SYMBOL:
+            share = i
             break
-    return Response(id)
+    return Response(share)
 

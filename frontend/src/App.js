@@ -14,7 +14,7 @@ function App() {
         <Container>
           <Routes>
             <Route path="/" element={<HomeScreen />} exact />
-            <Route path="/share/:id" element={<ShareScreen />} exact />
+            <Route path="/share/:SYMBOL" element={<ShareScreen />} exact />
           </Routes>
         </Container>
       </main>
